@@ -12,8 +12,8 @@ const Navbar = () => {
                 </label>
                 <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-neutral rounded-box w-52">
                     <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/'>Schedule</Link></li>
-                    <li><Link to='/'>Bus List</Link></li>
+                    <li><Link to='/information'>Bus List</Link></li>
+                    <li><Link to='/drivers'>Bus List</Link></li>
                     <li><Link to='/'>About</Link></li>
                 </ul>
                 </div>
