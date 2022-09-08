@@ -19,10 +19,10 @@ const Navbar = () => {
                 </div>
             </div>
             <div class="navbar-center font-sans">
-            <div class="w-10 rounded-xl">
-                <img src={logo} />
+            <div class="w-12 rounded-xl">
+                <img src={logo} alt=''/>
             </div>
-                <a class="btn btn-ghost normal-case text-xl">RUET Transport System</a>
+                <a href='/home' class="btn btn-ghost normal-case text-xl">RUET Transport System</a>
             </div>
 
             <div class="navbar-end">
