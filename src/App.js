@@ -8,6 +8,8 @@ import Admin from './Pages/Admin/Admin';
 import RequireAuth from './Pages/Login/Login/RequireAuth';
 import BusList from './Pages/BusList/BusList';
 import Booking from './Pages/Booking/Booking';
+import BookingHistory from './Pages/Booking/BookingHistory';
+import Employees from './Pages/Employee/Employees';
 
 
 function App() {
@@ -17,18 +19,16 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/information' element={<BusList></BusList>}></Route>
-        <Route path='/employee' element={<BusList></BusList>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/admin-login' element={<Login></Login>}></Route>
         <Route path='/admin' element={<RequireAuth><Admin></Admin></RequireAuth>}></Route>
-        <Route path='/profile' element={<RequireAuth><Admin></Admin></RequireAuth>}></Route>
-        <Route path='/update-schedule' element={<RequireAuth><Admin></Admin></RequireAuth>}></Route>
         <Route path='/add-bus' element={<RequireAuth><Admin></Admin></RequireAuth>}></Route>
         <Route path='/add-employee' element={<RequireAuth><Admin></Admin></RequireAuth>}></Route>
+        <Route path='/employee' element={<Employees></Employees>}></Route>
         <Route path='/update-bus' element={<RequireAuth><Admin></Admin></RequireAuth>}></Route>
         <Route path='/update-employee' element={<RequireAuth><Admin></Admin></RequireAuth>}></Route>
         <Route path='/booking' element={<RequireAuth><Booking></Booking></RequireAuth>}></Route>
-        <Route path='/booking-history' element={<RequireAuth><Admin></Admin></RequireAuth>}></Route>
+        <Route path='/booking-history' element={<RequireAuth><BookingHistory></BookingHistory></RequireAuth>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

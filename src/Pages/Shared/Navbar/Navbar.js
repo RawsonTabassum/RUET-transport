@@ -32,6 +32,7 @@ const Navbar = () => {
                     <li><Link to='/information'>Bus List</Link></li>
                     <li><Link to='/employee'>Employee</Link></li>
                     <li><Link to='/booking'>Booking</Link></li>
+                    <li><Link to='/admin'>Admin Panel</Link></li>
                 </ul>
                 </div>
             </div>

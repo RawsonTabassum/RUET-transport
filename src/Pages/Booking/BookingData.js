@@ -9,7 +9,7 @@ const BookingData = ({row, setBooking}) => {
             <td>{row.upcoming_maintenance}</td>
             <td>{row.start_year}</td>
             <td>{row.Availablity}</td>
-            <td>{row.Availablity === 'Booked' ? <button className='btn rounded-lg' disabled>Booked</button> : <label onClick={()=>setBooking(row)} for="booking-modal" class="btn rounded-lg">Book</label>}
+            <td>{row.Availablity === 'Booked' ? <button className='btn rounded-lg' disabled>Book</button> : <label onClick={()=>setBooking(row)} for="booking-modal" class="modal-button btn rounded-lg">Book</label>}
             </td>
         </tr>
     );
