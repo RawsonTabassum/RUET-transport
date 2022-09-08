@@ -31,14 +31,14 @@ const Login = () => {
     const onSubmit = data=> {
         console.log(data);
         signInWithEmailAndPassword(data.email, data.password);
-        navigate('/');
+        navigate('/admin');
     }
 
     return (
         <div className='flex justify-center items-center h-screen'>
             <div class="card w-96 bg-base-100 shadow-xl">
                 <div class="card-body">
-                    <h2 class="text-center text-3xl font-bold text-gray">Staff Login</h2>
+                    <h2 class="text-center text-3xl font-bold text-gray">Admin Login</h2>
                     <div >
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div class="form-control w-full max-w-xs">
@@ -93,8 +93,9 @@ const Login = () => {
                     </div>
                     
                     <p className='text-center text-secondary pt-4'>
-                        <Link to='/admin-login'>Switch to admin login</Link>
+                        <Link to='/staff-login'>Switch to staff login</Link>
                     </p>
+                    
                 </div>
             </div>
         </div>
