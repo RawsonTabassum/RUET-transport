@@ -19,7 +19,7 @@ const Admin = () => {
                     <Link to='/profile'>Update Employee</Link>
                 </button>
                 <button class="btn btn-block rounded-lg my-4">
-                    <Link to='/profile'>Book Bus</Link>
+                    <Link to='/booking'>Book Bus</Link>
                 </button>
                 <button class="btn btn-block rounded-lg my-4">
                     <Link to='/booking-history'>Booking History</Link>

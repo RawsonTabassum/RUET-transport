@@ -7,7 +7,7 @@ const BusList = () => {
     const [bus, setBus] = useState([]);
 
     useEffect(()=> {
-        fetch('http://localhost:5000/bus')
+        fetch('https://gentle-dusk-90329.herokuapp.com/bus')
         .then(res=> res.json())
         .then(data=> setBus(data));
     }, [])

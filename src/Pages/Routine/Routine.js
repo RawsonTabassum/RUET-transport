@@ -5,7 +5,7 @@ const Routine = () => {
     const [routine, setRoutine] = useState([]);
 
     useEffect(()=> {
-        fetch('http://localhost:5000/routine')
+        fetch('https://gentle-dusk-90329.herokuapp.com/routine')
         .then(res=> res.json())
         .then(data=> setRoutine(data));
     }, [])
