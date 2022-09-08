@@ -2,12 +2,15 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import auth from '../../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate();
+    const location = useLocation();
+
+    let from = location.state?.from?.pathname || '/admin';
     
     const [
         signInWithEmailAndPassword,
@@ -28,17 +31,20 @@ const Login = () => {
         errorMessage = <p className='text-error'>*{error?.message}</p>
     }
 
+    if(user){
+        navigate(from, {replace: true});
+    }
+
     const onSubmit = data=> {
         console.log(data);
         signInWithEmailAndPassword(data.email, data.password);
-        navigate('/');
     }
 
     return (
         <div className='flex justify-center items-center h-screen'>
             <div class="card w-96 bg-base-100 shadow-xl">
                 <div class="card-body">
-                    <h2 class="text-center text-3xl font-bold text-gray">Staff Login</h2>
+                    <h2 class="text-center text-3xl font-bold text-gray">Admin Login</h2>
                     <div >
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div class="form-control w-full max-w-xs">
@@ -92,9 +98,9 @@ const Login = () => {
                         </form>
                     </div>
                     
-                    <p className='text-center text-secondary pt-4'>
+                    {/* <p className='text-center text-secondary pt-4'>
                         <Link to='/admin-login'>Switch to admin login</Link>
-                    </p>
+                    </p> */}
                 </div>
             </div>
         </div>

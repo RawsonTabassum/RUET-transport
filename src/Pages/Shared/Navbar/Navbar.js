@@ -1,16 +1,25 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import logo from '../../../images/ruetlogo.png'
 
 const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
+    const navigate = useNavigate();
+
+    if(loading){
+        return <div className='flex justify-center h-screen items-center'>
+            <button class="btn btn-ghost loading ">loading</button>
+        </div>
+    }
 
     const logOut = ()=> {
         signOut(auth);
+        navigate('/admin-login');
     }
+
     return (
         <div className="navbar bg-neutral text-white">
             <div className="navbar-start">
@@ -22,7 +31,7 @@ const Navbar = () => {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/information'>Bus List</Link></li>
                     <li><Link to='/employee'>Employee</Link></li>
-                    <li><Link to='/'>Booking</Link></li>
+                    <li><Link to='/booking'>Booking</Link></li>
                 </ul>
                 </div>
             </div>
@@ -34,9 +43,9 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-end">
-                <button className="btn btn-ghost">
-                    {user ? <Link onClick={logOut} to='/staff-login'>Sign Out</Link> : <Link to='/staff-login'>Login</Link>}
-                </button>
+                
+                    {user ? <button onClick={logOut}  className="btn btn-ghost"><Link to='/admin-login'>Sign Out</Link></button> : <button className="btn btn-ghost"><Link to='/admin-login'>Login</Link></button>}
+                
             </div>
         </div>
     );

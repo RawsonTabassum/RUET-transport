@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import auth from '../../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
@@ -92,9 +92,9 @@ const Login = () => {
                         </form>
                     </div>
                     
-                    <p className='text-center text-secondary pt-4'>
+                    {/* <p className='text-center text-secondary pt-4'>
                         <Link to='/staff-login'>Switch to staff login</Link>
-                    </p>
+                    </p> */}
                     
                 </div>
             </div>
