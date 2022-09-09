@@ -7,16 +7,16 @@ const Admin = () => {
             <div class="card w-96 ">
                 <h2 className='text-center text-4xl text-gray font-bold mb-10'>Admin Panel</h2>
                 <button class="btn btn-block rounded-lg my-4">
-                    <Link to='/profile'>Add Bus</Link>
+                    <Link to='/add-bus'>Add Bus</Link>
                 </button>
                 <button class="btn btn-block rounded-lg my-4">
-                    <Link to='/profile'>Add Employee</Link>
+                    <Link to='/add-employee'>Add Employee</Link>
                 </button>
                 <button class="btn btn-block rounded-lg my-4">
-                    <Link to='/profile'>Update Bus</Link>
+                    <Link to='/update-bus'>Update Bus</Link>
                 </button>
                 <button class="btn btn-block rounded-lg my-4">
-                    <Link to='/profile'>Update Employee</Link>
+                    <Link to='/update-employee'>Update Employee</Link>
                 </button>
                 <button class="btn btn-block rounded-lg my-4">
                     <Link to='/booking'>Book Bus</Link>
